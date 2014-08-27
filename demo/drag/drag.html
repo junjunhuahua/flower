@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+<title>拖拽demo</title>
+<style>
+    * { margin: 0; padding: 0; color: #fff; }
+	.d-thing { display: block; margin-top: 10px; width: 320px; height: 200px; background-color: #fff; z-index: 2; }
+	.d-thing span { position: relative; float: left; display: block; width: 80px; height: 50px; margin-right: 10px; z-index: 2; }
+	.s1 { background-color: red; }
+	.s2 { background-color: blue; }
+	.d-target { margin: 0 auto; width: 100px; height: 100px; background-color: yellow; z-index: 1; }
+	.d-target.on { opacity: .5; }
+</style>
+</head>
+<body>
+	<div class="main">
+		<div class="d-thing"><span class="s1"></span><span class="s2"></span></div>
+		<div class="d-target"></div>
+	</div>
+</body>
+<script type="text/javascript" src="../zepto.min.js"></script>
+<script type="text/javascript" src="../../src/drag.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.d-thing span').simulateDrag({dragTarget:'.d-target',callback: function(){console.log('finish');}});
+	});
+</script>
+</html>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
-<title>专业根治不同屏幕下按钮定位及大小问题</title>
+<title>pos</title>
 <style>
     * { margin: 0; padding: 0; color: #fff; }
 	.d1 { position: relative; width: 320px; height: 200px; }
@@ -15,12 +15,10 @@
 <body>
 	<div class="main">
 		<div class="d1"><span class="s1"></span><span class="s2"></span></div>
-		<div class="d2"><span class="s3"></span><span class="s4"></span></div>
-		<div class="d3"><span class="s5"></span><span class="s6"></span></div>
 	</div>
 </body>
-<script type="text/javascript" src="zepto.min.js"></script>
-<script type="text/javascript" src="pos.js"></script>
+<script type="text/javascript" src="../zepto.min.js"></script>
+<script type="text/javascript" src="../../src/pos.js"></script>
 <script type="text/javascript">
 	$('.s1,.s2').evtPos({
 		bgElement: '.d1'

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+<title>panel</title>
+<style>
+    * { margin: 0; padding: 0; }
+    .main { position: relative; width: 100%; overflow: hidden; }
+	.panel-cont { position: relative; width: 100%; height: 100%; background: blue; }
+	.panel-cont span { position: absolute; display: block; background-color: #fff; left: 20px; top: 20px; width: 50px; height: 50px; }
+	.panel-side { position: absolute; top: 0; display: block; background-color: red; display: none; }
+	.ui-panel-left { left: 0; }
+	.ui-panel-right { right: 0; }
+	.panel-mask { width: 100%; height: 100%; background-color: rgba(0,0,0,.5); position: absolute; left: 0; top: 0; display: none; }
+</style>
+</head>
+<body>
+	<div class="main">
+		<div class="panel-cont">
+			<span></span>
+			<div class="panel-mask"></div>
+		</div>
+		<div class="panel-side"></div>
+	</div>
+</body>
+<script type="text/javascript" src="../zepto.min.js"></script>
+<script type="text/javascript" src="../../src/panel.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var winHeight = $(window).height();
+		$('.panel-cont,.panel-side').height(winHeight);
+		//调用panel
+		$('.panel-cont').panelNav({btnElement: '.panel-cont span',panelElement: '.panel-side',fatherElement: '.panel-cont',maskElement: '.panel-mask',direction: 'left',panelMode: 'push',panelWidth: -80,onFunc: function(){console.log(1);},offFunc: function(){console.log(2);}});
+	})
+</script>
+</html>
